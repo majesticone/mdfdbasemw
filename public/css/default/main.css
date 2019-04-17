@@ -1,0 +1,19 @@
+#tdata {
+    border: solid black 1px;
+    width: 1490px;
+    height : 450px;
+    text-align: center;
+}
+#tdata tr td{
+    border: solid black 1px;
+}
+
+#no_border{
+    border: none;
+}
+
+#tcontrols {
+    float: right;
+    max-width: auto;
+    text-align: center;
+}
