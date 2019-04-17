@@ -8,7 +8,7 @@
     <title>{{ config('app.name', 'MDF AIDS DATABASE') }}</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <!-- jquerymobile -->
+    
 	<link rel="stylesheet" href="{{ asset('css/default/jquery.mobile-1.4.5.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/default/main.css')}}">
 	<script src="{{asset('js/jquery.js')}}"></script>

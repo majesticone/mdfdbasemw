@@ -19,37 +19,41 @@ class CreateHtsPitcInpatientsTable extends Migration
             //mllitary Data Variables
             $table->integer('pitc_ml_n_f_15_19');
             $table->integer('pitc_ml_n_f_20_24');
-            $table->integer('pitc_ml_n_f_25_19');
+            $table->integer('pitc_ml_n_f_25_29');
             $table->integer('pitc_ml_n_f_30_34');
             $table->integer('pitc_ml_n_f_35_39');
-            $table->integer('pitc_ml_n_f_40_49');
+            $table->integer('pitc_ml_n_f_40_44');
+            $table->integer('pitc_ml_n_f_45_49');
             $table->integer('pitc_ml_n_f_abv_50');
             $table->integer('pitc_ml_n_f_age_unk');
 
             $table->integer('pitc_ml_n_m_15_19');
             $table->integer('pitc_ml_n_m_20_24');
-            $table->integer('pitc_ml_n_m_25_19');
+            $table->integer('pitc_ml_n_m_25_29');
             $table->integer('pitc_ml_n_m_30_34');
             $table->integer('pitc_ml_n_m_35_39');
-            $table->integer('pitc_ml_n_m_40_49');
+            $table->integer('pitc_ml_n_m_40_44');
+            $table->integer('pitc_ml_n_m_45_49');
             $table->integer('pitc_ml_n_m_abv_50');
             $table->integer('pitc_ml_n_m_age_unk');
 
             $table->integer('pitc_ml_p_f_15_19');
             $table->integer('pitc_ml_p_f_20_24');
-            $table->integer('pitc_ml_p_f_25_19');
+            $table->integer('pitc_ml_p_f_25_29');
             $table->integer('pitc_ml_p_f_30_34');
             $table->integer('pitc_ml_p_f_35_39');
-            $table->integer('pitc_ml_p_f_40_49');
+            $table->integer('pitc_ml_p_f_40_44');
+            $table->integer('pitc_ml_p_f_45_49');
             $table->integer('pitc_ml_p_f_abv_50');
             $table->integer('pitc_ml_p_f_age_unk');
 
             $table->integer('pitc_ml_p_m_15_19');
             $table->integer('pitc_ml_p_m_20_24');
-            $table->integer('pitc_ml_p_m_25_19');
+            $table->integer('pitc_ml_p_m_25_29');
             $table->integer('pitc_ml_p_m_30_34');
             $table->integer('pitc_ml_p_m_35_39');
-            $table->integer('pitc_ml_p_m_40_49');
+            $table->integer('pitc_ml_p_m_40_44');
+            $table->integer('pitc_ml_p_m_45_49');
             $table->integer('pitc_ml_p_m_abv_50');
             $table->integer('pitc_ml_p_m_age_unk');
 
@@ -60,10 +64,11 @@ class CreateHtsPitcInpatientsTable extends Migration
             $table->integer('pitc_cv_n_f_10_14');
             $table->integer('pitc_cv_n_f_15_19');
             $table->integer('pitc_cv_n_f_20_24');
-            $table->integer('pitc_cv_n_f_25_19');
+            $table->integer('pitc_cv_n_f_25_29');
             $table->integer('pitc_cv_n_f_30_34');
             $table->integer('pitc_cv_n_f_35_39');
-            $table->integer('pitc_cv_n_f_40_49');
+            $table->integer('pitc_cv_n_f_40_44');
+            $table->integer('pitc_cv_n_f_45_49');
             $table->integer('pitc_cv_n_f_abv_50');
             $table->integer('pitc_cv_n_f_age_unk');
 
@@ -73,10 +78,11 @@ class CreateHtsPitcInpatientsTable extends Migration
             $table->integer('pitc_cv_n_m_10_14');
             $table->integer('pitc_cv_n_m_15_19');
             $table->integer('pitc_cv_n_m_20_24');
-            $table->integer('pitc_cv_n_m_25_19');
+            $table->integer('pitc_cv_n_m_25_29');
             $table->integer('pitc_cv_n_m_30_34');
             $table->integer('pitc_cv_n_m_35_39');
-            $table->integer('pitc_cv_n_m_40_49');
+            $table->integer('pitc_cv_n_m_40_44');
+            $table->integer('pitc_cv_n_m_45_49');
             $table->integer('pitc_cv_n_m_abv_50');
             $table->integer('pitc_cv_n_m_age_unk');
 
@@ -86,10 +92,11 @@ class CreateHtsPitcInpatientsTable extends Migration
             $table->integer('pitc_cv_p_f_10_14');
             $table->integer('pitc_cv_p_f_15_19');
             $table->integer('pitc_cv_p_f_20_24');
-            $table->integer('pitc_cv_p_f_25_19');
+            $table->integer('pitc_cv_p_f_25_29');
             $table->integer('pitc_cv_p_f_30_34');
             $table->integer('pitc_cv_p_f_35_39');
-            $table->integer('pitc_cv_p_f_40_49');
+            $table->integer('pitc_cv_p_f_40_44');
+            $table->integer('pitc_cv_p_f_45_49');
             $table->integer('pitc_cv_p_f_abv_50');
             $table->integer('pitc_cv_p_f_age_unk');
 
@@ -99,10 +106,11 @@ class CreateHtsPitcInpatientsTable extends Migration
             $table->integer('pitc_cv_p_m_10_14');
             $table->integer('pitc_cv_p_m_15_19');
             $table->integer('pitc_cv_p_m_20_24');
-            $table->integer('pitc_cv_p_m_25_19');
+            $table->integer('pitc_cv_p_m_25_29');
             $table->integer('pitc_cv_p_m_30_34');
             $table->integer('pitc_cv_p_m_35_39');
-            $table->integer('pitc_cv_p_m_40_49');
+            $table->integer('pitc_cv_p_m_40_44');
+            $table->integer('pitc_cv_p_m_45_49');
             $table->integer('pitc_cv_p_m_abv_50'); 
             $table->integer('pitc_cv_p_m_age_unk');           
 

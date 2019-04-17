@@ -212,23 +212,23 @@
             <tr>
                 <td>1 - 4</td>
                 <td>{{Form::text('hts_civ_neg_female_1_to_4', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
-                <td>{{Form::text('hts_civ_neg_male_less_1_to_4', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
-                <td>{{Form::text('hts_civ_pos_female_less_1_to_4', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
-                <td>{{Form::text('hts_civ_pos_male_less_1_to_4', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
+                <td>{{Form::text('hts_civ_neg_male_1_to_4', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
+                <td>{{Form::text('hts_civ_pos_female_1_to_4', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
+                <td>{{Form::text('hts_civ_pos_male_1_to_4', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
             </tr>
             <tr>
                 <td>5 - 9</td>
                 <td>{{Form::text('hts_civ_neg_female_5_to_9', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
-                <td>{{Form::text('hts_civ_neg_male_less_5_to_9', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
-                <td>{{Form::text('hts_civ_pos_female_less_5_to_9', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
-                <td>{{Form::text('hts_civ_pos_male_less_5_to_9', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
+                <td>{{Form::text('hts_civ_neg_male_5_to_9', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
+                <td>{{Form::text('hts_civ_pos_female_5_to_9', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
+                <td>{{Form::text('hts_civ_pos_male_5_to_9', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
             </tr>
             <tr>
                 <td>10 - 14</td>
                 <td>{{Form::text('hts_civ_neg_female_10_to_14', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
                 <td>{{Form::text('hts_civ_neg_male_10_to_14', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
                 <td>{{Form::text('hts_civ_pos_female_10_to_14', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
-                <td>{{Form::text('hts_civ_pos_male_less_10_to_14', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
+                <td>{{Form::text('hts_civ_pos_male_10_to_14', '', ['class' => 'form-control', 'placeholder' => 'Enter Here'])}}</td>
             </tr>
             <tr>
                 <td>15 -19</td>
