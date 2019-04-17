@@ -13,14 +13,15 @@ class CreateReportLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('report__logs', function (Blueprint $table) {
+        Schema::create('report_logs', function (Blueprint $table) {
             $table->increments('report_id');
-                $table->string('unit_id');
-                $table->string('team_id');
-                $table->string('lead_id');
-                $table->string('month');
-                $table->string('year');
-                $table->string('quarter');
+            $table->string('site_id');
+            $table->string('unit_id');
+            $table->string('team_id');
+            $table->string('lead_id');
+            $table->string('month');
+            $table->string('year');
+            $table->string('quarter');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateReportLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('report__logs');
+        Schema::dropIfExists('report_logs');
     }
 }

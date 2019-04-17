@@ -8,12 +8,12 @@
     <title>{{ config('app.name', 'MDF AIDS DATABASE') }}</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <!-- jquerymobile
+    <!-- jquerymobile -->
 	<link rel="stylesheet" href="{{ asset('css/default/jquery.mobile-1.4.5.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/default/main.css')}}">
 	<script src="{{asset('js/jquery.js')}}"></script>
 	<script src="{{asset('js/jquery.mobile-1.4.5.min.js')}}"></script>
-     -->
+    
 	<style>
 		#custom-border-radius .ui-btn-icon-notext.ui-corner-all {
 			-webkit-border-radius: .3125em;

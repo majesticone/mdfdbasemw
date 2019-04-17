@@ -14,10 +14,10 @@
                     {{Form::label('site', 'Site Name')}}
                     <select name = "site_id" class ="form-control">
                         <option value = "">--Select-Site--</option>                          
-                        <option value = "1">Kauma</option>  
-                        <option value = "2">Mbale</option> 
-                        <option value = "3">Mzava</option> 
-                        <option value = "4">Chiwanya</option>                
+                        <option value = "Kauma">Kauma</option>  
+                        <option value = "Mbale">Mbale</option> 
+                        <option value = "Mzava">Mzava</option> 
+                        <option value = "Chiwanya">Chiwanya</option>                
                     </select>
                 </div>
                 <div class ="form-group">

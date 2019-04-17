@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Report_Log;
+use App\ReportLog;
 use Illuminate\Http\Request;
 
 class ReportLogController extends Controller
@@ -41,10 +41,10 @@ class ReportLogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Report_Log  $report_Log
+     * @param  \App\ReportLog  $reportLog
      * @return \Illuminate\Http\Response
      */
-    public function show(Report_Log $report_Log)
+    public function show(ReportLog $reportLog)
     {
         //
     }
@@ -52,10 +52,10 @@ class ReportLogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Report_Log  $report_Log
+     * @param  \App\ReportLog  $reportLog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Report_Log $report_Log)
+    public function edit(ReportLog $reportLog)
     {
         //
     }
@@ -64,10 +64,10 @@ class ReportLogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Report_Log  $report_Log
+     * @param  \App\ReportLog  $reportLog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Report_Log $report_Log)
+    public function update(Request $request, ReportLog $reportLog)
     {
         //
     }
@@ -75,10 +75,10 @@ class ReportLogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Report_Log  $report_Log
+     * @param  \App\ReportLog  $reportLog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Report_Log $report_Log)
+    public function destroy(ReportLog $reportLog)
     {
         //
     }

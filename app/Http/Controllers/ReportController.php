@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Hts_Facility;
-use App\Report_Log;
+use App\ReportLog;
 
 class ReportController extends Controller
 {
@@ -24,7 +24,7 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $cus =  Hts_Facility::orderBy('id','asc')->paginate(5);       
+        $cus =  ReportLog::orderBy('report_id','asc')->paginate(5);       
         return View('Report.index')->with('cus',$cus);
     }
 
@@ -57,16 +57,21 @@ class ReportController extends Controller
     {
         $hts_facility = new  Hts_Facility(); 
         //save report log
-        $log = new Report_log();
+        $log = new ReportLog();
         $log->unit_id = $request->input('unit_id');
+        $log->site_id = $request->input('site_id');
         $log->team_id = $request->input('team_id');
         $log->lead_id = $request->input('lead_id');
-        $log->month = $request->input('year_month');
-        $log->year = $request->input('year_month');
+        // $log->month = $request->input('year_month');
+        // $log->year = $request->input('year_month');
+        $log->month = "April";
+        $log->year = "2019";
         $log->quarter = $request->input('quarter');     
         $log->save();  
 
-        //return redirect('/home');
+        return redirect('/report')->with('success','Created Successfully');
+
+      
         // $this->validate($request ,[
         //     'name' => 'required',
         //     'description' => 'required',
