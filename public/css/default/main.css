@@ -17,3 +17,30 @@
     max-width: auto;
     text-align: center;
 }
+#del{
+    width : 40 px;    
+}
+
+#sectdata {   
+    width: 1495px;
+    height : 300px;
+    text-align: center;   
+}
+#sectdata tr td{
+    border: solid black 1px;
+}
+#pitcdata {  
+    border: solid black 1px; 
+    width: 1495px;
+    height : 200px;
+    text-align: center;   
+}
+#pitcdata tr td{
+    border: solid black 1px;
+}
+.sectors{
+    display: none;
+}
+.tdblack{
+    background-color: black;
+}

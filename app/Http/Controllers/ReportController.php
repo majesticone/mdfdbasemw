@@ -25,8 +25,8 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $cus =  ReportLog::orderBy('report_id','asc')->paginate(5);       
-        return View('Report.index')->with('cus',$cus);
+        $reports =  ReportLog::orderBy('id','asc')->paginate(5);       
+        return View('Report.index')->with('reports',$reports);
     }
 
     /**
@@ -71,13 +71,11 @@ class ReportController extends Controller
         $log->save();  
         
         //last inserted report id
-        $insertedId = $log->report_id;
+        $report_id = $log->id;
 
         //HTS Facility Data
-
-       // $hts_facility->report_id = $insertedId;
         $hts_facility = new  Hts_Facility(); 
-        $hts_facility->report_id = 1;
+        $hts_facility->report_id =  $report_id;
         $hts_facility->hts_tot_ml_m = $request->input('hts_tot_mil_male');
         $hts_facility->hts_tot_cv_m = $request->input('hts_tot_civ_male');
         $hts_facility->hts_tot_unk_m = $request->input('hts_tot_unk_male');
@@ -93,10 +91,8 @@ class ReportController extends Controller
         $hts_facility->save();
 
         // HTS PITC DATA MILITARY
-     $hts_pit = new HtsPitcInpatient();
-
-    //    $hts_pit->report_id  = 	$insertedId;
-       $hts_pit->report_id  = 1;
+       $hts_pit = new HtsPitcInpatient();
+       $hts_pit->report_id  =  $report_id;
        $hts_pit->pitc_ml_n_f_15_19 = $request->input('hts_mil_neg_female_15_to_19');
        $hts_pit->pitc_ml_n_f_20_24 = $request->input('hts_mil_neg_female_20_to_24');
        $hts_pit->pitc_ml_n_f_25_29	= $request->input('hts_mil_neg_female_25_to_29');
@@ -206,24 +202,7 @@ class ReportController extends Controller
 
        $hts_pit->save();
 
-      return redirect('/report')->with('success','Created Successfully'. $insertedId);
-
-      
-        // $this->validate($request ,[
-        //     'name' => 'required',
-        //     'description' => 'required',
-        //     'mainCatId' => 'required',
-        //     'subCatId' => 'required',
-        //     'description' => 'required',
-        //     'district' => 'required',
-        //     'location' => 'required',
-        //     'address' => 'required',
-        //     'mobile' => 'required',
-        //     'directions' => 'required',
-        //     'subscription' => 'required'
-        // ]);  
-
-        
+      return redirect('/report')->with('success','Created Successfully');      
     }   
     /**
      * Display the specified resource.
@@ -232,10 +211,11 @@ class ReportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        
-        // $cus = Report::find($id);
-        // return View('Report.show')->with('cus',$cus);
+    {        
+         $report = ReportLog::find($id);
+         $htsfacility = Hts_Facility::where('report_id', $id)->first();
+         $htspitc = HtsPitcInpatient::where('report_id', $id)->first();        
+         return View('report.show')->with('hts_pitc',$htspitc)->with('report',$report)->with('hts_fac', $htsfacility);
     }
 
     /**
@@ -245,30 +225,11 @@ class ReportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //     $cus = Report::find($id);
-        //     $categories = MainCategory::all();
-        //     $subcategories = SubCategory::all();
-        //     $districts = array(
-        //         'Lilongwe', 'Nsanje','Mzuzu', 'Chitipa', 'Kasungu', 'Balaka', 'Mchinji', 'Zomba', 'Nkhatabay','Blantyre', 'Ntcheu',
-        //         'Thyolo', 'Mwanza', 'Neno', 'Karonga','Dedza', 'Mulanje', 'Chiladzulo', 'Dowa', 'Rumphi','Machinga','Mangochi'
-        //         ,'Salima'
-        //     );
-        //    //retrieving maincategory name
-        //    $mainCatId = $cus->mainCatId;
-        //    $mainCategory = MainCategory::find($mainCatId);
-        //    $mCatName = $mainCategory->name;
-        //    //retrieving subcategory name
-        //    $subCatId = $cus->mainCatId;
-        //    $subCategory = MainCategory::find($subCatId);
-        //    $sCatName = $subCategory->name;
-
-        //    return View ("Report.edit")->with("mCat", $mCatName)
-        //    ->with("sCat", $sCatName)->with("categories", $categories)
-        //    ->with("subcategories", $subcategories)->with("districts",$districts)
-        //    ->with("cus", $cus);
+    {         
+        $htsfacility = Hts_Facility::where('report_id', $id)->first();
+        $htspitc = HtsPitcInpatient::where('report_id', $id)->first();        
+        return View('report.edit')->with('hts_pitc',$htspitc)->with('hts_fac', $htsfacility);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -276,46 +237,11 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id)    
     {
-    //     $this->validate($request ,[
-    //         'name' => 'required',
-    //         'description' => 'required',
-    //         'mainCatId' => 'required',
-    //         'subCatId' => 'required',
-    //         'description' => 'required',
-    //         'district' => 'required',
-    //         'location' => 'required',
-    //         'address' => 'required',
-    //         'mobile' => 'required',
-    //         'directions' => 'required'
-    //     ]);        
-    //     $cus = Report::find($id);      
-    //     $cus->mainCatId = $request->input('mainCatId');
-    //     $cus->subCatId = $request->input('subCatId');
-    //     $cus->name = $request->input('name');        
-    //     $cus->description = $request->input('description');
-    //     $cus->district = $request->input('district');
-    //     $cus->location = $request->input('location');
-    //     $cus->address = $request->input('address');
-    //     $cus->mobile = $request->input('mobile');
-    //     $cus->tell = $request->input('tell');
-    //     $cus->email = $request->input('email');
-    //     $cus->weburl = $request->input('weburl');
-    //     $cus->twitter = $request->input('twitter');
-    //     $cus->facebook = $request->input('facebook');
-    //     $cus->linkedin = $request->input('linkedin');
-    //     $cus->whatsapp = $request->input('whatsapp');
-    //     $cus->skype = $request->input('skype');
-    //     $cus->directions = $request->input('directions');        
-    //     $cus->latitude = $request->input('latitude');
-    //     $cus->longitude = $request->input('longitude');
-    //     $cus->duedate = "2019";
-    //     $cus->active = "1";           
-    //     $cus->save();
-    //    return redirect('/Report')->with('success','Report Updated');
-    }
 
+        return redirect('/report')->with('success','Report updated Successfully');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -324,8 +250,12 @@ class ReportController extends Controller
      */
     public function destroy($id)
     {
-        // $cus = Report::find($id);
-        // $cus->delete();
-        // return redirect('/Report')->with('success','Deleted Successfully');
+         $log = ReportLog::find($id);
+         $log->delete();
+         $hts_facility = Hts_Facility::firstOrFail()->where('report_id',$id);
+         $hts_facility->delete();
+         $hts_pit = HtsPitcInpatient::firstOrFail()->where('report_id',$id);
+         $hts_pit->delete();
+         return redirect('/report')->with('success','Report Deleted Successfully');
     }
 }

@@ -3,7 +3,7 @@
 <div class="ui-alt-icon">       
        <h3 > All Reports </h3> <a href="/report/create" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-inline">New</a>     
 </div>
- @if(count($cus) > 0)
+ @if(count($reports) > 0)
 <form>
     <input id="filterTable-input" data-type="search">
 </form>
@@ -24,35 +24,35 @@
             <th></th>  
    </thead>
       </tr>
-        @foreach($cus as $cat)
+        @foreach($reports as $report)
             <tr>
-                <td>{{$cat->report_id}}</td>
-                <td>{{$cat->site_id}}</td>
-                <td>{{$cat->unit_id}}</td>
-                <td>{{$cat->team_id}}</td>
-                <td>{{$cat->lead_id}}</td>
-                <td>{{$cat->quarter}}</td>
-                <td>{{$cat->month}}</td>
-                <td>{{$cat->year}}</td>
-                <td>{{$cat->created_at}} </td>
-                <td>{{$cat->updated_at}} </td>
+                <td>{{$report->id}}</td>
+                <td>{{$report->site_id}}</td>
+                <td>{{$report->unit_id}}</td>
+                <td>{{$report->team_id}}</td>
+                <td>{{$report->lead_id}}</td>
+                <td>{{$report->quarter}}</td>
+                <td>{{$report->month}}</td>
+                <td>{{$report->year}}</td>
+                <td>{{$report->created_at}} </td>
+                <td>{{$report->updated_at}} </td>
                 <td>
-                    <a href="/Customer/{{$cat->id}}"> 
+                    <a href="/report/{{$report->id}}"> 
                         <div class="ui-input-btn ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all">                    
                         </div>
                     </a>
                 </td>
-                <td>
-                    <a href="/Customer/{{$cat->id}}/edit">
-                        <div class="ui-input-btn ui-btn ui-icon-edit ui-btn-icon-notext ui-corner-all">                    
-                        </div>
-                    </a>
+                <td >
+                {!!Form::open(['action' => ['ReportController@destroy', $report->id], 'method'=>'POST','class'=>'pull-right'])!!}
+                     {{Form::hidden('_method','DELETE')}}
+                     {{Form::submit('Del', ['class' => 'btn btn-danger', 'id' => 'del' ])}}
+                {!!Form::close()!!}
                 </td>
             <tr>
         @endforeach         
     </table> 
     <br/>
-    {{$cus->links()}}      
+    {{$reports->links()}}      
     @else
         <p>No Record found </p>
     @endif
